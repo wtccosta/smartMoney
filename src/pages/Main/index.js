@@ -1,21 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+
+import BalancePanel from '../../components/BalancePanel';
+import EntrySumary from '../../components/EntrySumary'
 
 const Main = () => {
   return (
-    <View style={styles.conteier}>
-      <Text style={styles.label}>Main</Text>
+    <View style={styles.container}>
+      <BalancePanel />
+      <EntrySumary />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  conteier: {
+  container: {
     flex: 1,
     padding: 10,
-  },
-  label: {
-    fontSize: 20,
-  },
+  }
 });
+
 export default Main;
