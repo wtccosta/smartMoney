@@ -1,12 +1,13 @@
 import React from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Button, StyleSheet, TextInput, View} from 'react-native';
 
 import BalanceLabel from '../../components/BalanceLabel';
 
-const NewEntry = () => {
+const NewEntry = ({navigation}) => {
+  const currentBalance = 2065.35;
   return (
     <View style={styles.container}>
-      <BalanceLabel />
+      <BalanceLabel currencyBalance={currentBalance} />
 
       <View>
         <TextInput styles={styles.input} />
@@ -17,7 +18,7 @@ const NewEntry = () => {
 
       <View>
         <Button title="Adicionar" />
-        <Button title="Cancelar" />
+        <Button title="Cancelar" onPress={() => navigation.goBack()} />
       </View>
     </View>
   );
@@ -29,8 +30,10 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   input: {
-    borderColor: '#000',
-    borderWidth: 1,
+    height: 100, 
+  width: 100, 
+    borderWidth: 1, 
+    borderColor: 'black',
   },
 });
 

@@ -4,12 +4,12 @@ import { View, Button, StyleSheet } from 'react-native'
 import BalancePanelLabel from './BalancePanelLabel'
 import BalancePanelChart from './BalancePanelChart'
 
-export const BalancePanel = () => {
-  return (
+export const BalancePanel = ({currentBalance}) => {
+   return (
     <View style={styles.container}>
-      <BalancePanelLabel />
+      <BalancePanelLabel currentBalance={currentBalance} />
       <BalancePanelChart />
-      <Button title="Adicionar" />
+     
     </View>
   )
 }

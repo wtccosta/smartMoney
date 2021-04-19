@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
-const EntrySumaryList = () => {
+const EntrySumaryList = ({entries}) => {
   return (
   <View style={styles.container}> 
   
@@ -11,14 +11,8 @@ const EntrySumaryList = () => {
       </Text>
 
   <FlatList
-        data={[
-          {key: 'Alimentação: $200'},
-          {key: 'Combustível: $12'},
-          {key: 'Aluguel: $120'},
-          {key: 'Lazer: $250'},
-          {key: 'Outros: $1200'},
-        ]}
-        renderItem={({item}) => <Text> {item.key} </Text>}
+        data={entries}
+        renderItem={({item}) => <Text> {item.description} - {item.amount} </Text>}
       />
   
   </View>
